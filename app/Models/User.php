@@ -58,4 +58,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * > The posts() function returns all the posts that belong to the user
+     *
+     * @return A collection of Post objects.
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
