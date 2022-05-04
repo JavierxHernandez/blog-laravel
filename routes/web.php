@@ -26,4 +26,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('post', PostController::class);
+Route::resource('posts', PostController::class);
+Route::get('category/{category}', [PostController::class, 'category'])->name('posts.category');
+Route::get('tag/{tag}', [PostController::class, 'tag'])->name('posts.tag');
