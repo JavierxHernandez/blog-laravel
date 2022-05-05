@@ -5,7 +5,6 @@
                 <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url({{ Storage::url($post->image->url) }})">
 
                     <div class="p-3 flex items-center justify-between">
-                        <span class="text-sm font-light text-gray-800 dark:text-gray-600">{{ $post->created_at->format('d-m-Y') }}</span>
                         <a href="{{ route('posts.category', $post->category) }}" class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-800 rounded cursor-pointer hover:bg-gray-500">{{ $post->category->name }}</a>
                     </div>
 

@@ -11,6 +11,8 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','slug'];
+
     // protected function name(): Attribute
     // {
     //     return Attribute::make(
@@ -31,6 +33,6 @@ class Category extends Model
 
     public function getRouteKeyName()
     {
-        return 'name';
+        return 'slug';
     }
 }
