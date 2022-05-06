@@ -9,6 +9,8 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug', 'color'];
+
     /**
      * A tag can be applied to many posts and a post can have many tags.
      *
@@ -21,6 +23,6 @@ class Tag extends Model
 
     public function getRouteKeyName()
     {
-        return 'name';
+        return 'slug';
     }
 }

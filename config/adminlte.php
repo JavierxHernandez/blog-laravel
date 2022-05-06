@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -258,11 +258,13 @@ return [
             'text' => 'Categories',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-buffer fa-fw',
+            'active' => ['admin/categories*'],
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Tags',
+            'route'  => 'admin.tags.index',
+            'icon' => 'fas fa-tags fa-fw',
+            'active' => ['admin/tags*'],
         ],
         [
             'text'    => 'multilevel',

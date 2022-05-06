@@ -3,7 +3,7 @@
 @section('title', config('app.name'))
 
 @section('content_header')
-    <h1>Categories</h1>
+    <h1>Tags</h1>
 @stop
 
 @section('content')
@@ -12,10 +12,9 @@
             <strong>{{ session('info') }}</strong>
         </div>
     @endif
-
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.categories.create') }}" class="btn btn-secondary">Add new Category</a>
+            <a class="btn btn-secondary" href="{{ route('admin.tags.create') }}">Create new Tag</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -27,26 +26,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($tags as $tag)
                         <tr>
-                            <td scope="row">{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
+                            <td scope="row">{{ $tag->id }}</td>
+                            <td>{{ $tag->name }}</td>
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm"
-                                    href="{{ route('admin.categories.edit', $category) }}">Edit</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('admin.tags.edit', $tag) }}">Edit</a>
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                <form action="{{ route('admin.tags.destroy', $tag) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>
-    </div>
-
-@stop
+    @stop

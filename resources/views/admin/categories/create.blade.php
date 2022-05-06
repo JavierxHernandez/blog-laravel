@@ -3,7 +3,7 @@
 @section('title', config('app.name'))
 
 @section('content_header')
-    <h1>Create new category</h1>
+    <h1>Create new Category</h1>
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 {!! Form::label('slug', 'Slug') !!}
-                {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Add the category slug', 'readonly']) !!}
+                {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'The category slug', 'readonly']) !!}
                 @error('slug')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
