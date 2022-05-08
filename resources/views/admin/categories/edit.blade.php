@@ -16,23 +16,9 @@
 
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
+            {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
 
-            <div class="form-group">
-                {!! Form::label('name', 'Name') !!}
-                {!! Form::text('name', $category->name, ['class' => 'form-control', 'placeholder' => 'Add the category name']) !!}
-                @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('slug', 'Slug') !!}
-                {!! Form::text('slug', $category->slug, ['class' => 'form-control', 'placeholder' => 'Add the category slug', 'readonly']) !!}
-                @error('slug')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
+            @include('admin.categories.partials.form')
 
             {!! Form::submit('Edit category', ['class' => 'btn btn-primary']) !!}
 
