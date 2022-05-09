@@ -266,59 +266,19 @@ return [
             'icon' => 'fas fa-tags fa-fw',
             'active' => ['admin/tags*'],
         ],
+        ['header' => 'Blog options'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text'       => 'Posts list',
+            'route'      => 'admin.posts.index',
+            'icon' => 'fas fa-fw fa-clipboard',
+            'active' => ['admin/posts'],
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text'       => 'Create new post',
+            'route'      => 'admin.posts.create',
+            'icon' => 'fas fa-fw fa-file',
+            'active' => ['admin/posts/create'],
+
         ],
     ],
 
@@ -474,5 +434,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

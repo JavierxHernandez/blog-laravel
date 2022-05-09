@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Frameworks', 'PHP', 'JavaScript', 'Python'];
+        $categories = ['frameworks', 'php', 'javascript', 'python'];
 
         foreach ($categories as $category) {
             Category::create([

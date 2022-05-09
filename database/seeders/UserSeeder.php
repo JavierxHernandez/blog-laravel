@@ -17,10 +17,10 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Javier Hernandez',
-            'email' => 'javierxhernandezx@gmail.com',
+            'email' => 'admin@example.com',
             'password' => bcrypt('12345678'),
         ]);
 
-        User::factory(99)->create();
+        User::factory(9)->create();
     }
 }

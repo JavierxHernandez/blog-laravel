@@ -15,7 +15,7 @@
 
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.categories.create') }}" class="btn btn-secondary">Add new Category</a>
+            <a href="{{ route('admin.categories.create') }}" class="btn btn-secondary">Create new Category</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
