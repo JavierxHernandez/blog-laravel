@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-2 py-8 sm:px-6 lg:px-8 ml-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($posts as $post)
-                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url({{ Storage::url($post->image->url) }})">
+                <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{ Storage::url($post->image->url) }} @else https://cdn.pixabay.com/photo/2017/10/10/07/48/hills-2836301_960_720.jpg ) @endif">
 
                     <div class="p-3 flex items-center justify-between">
                         <a href="{{ route('posts.category', $post->category) }}" class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-800 rounded cursor-pointer hover:bg-gray-500">{{ $post->category->name }}</a>

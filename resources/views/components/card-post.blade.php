@@ -2,13 +2,13 @@
 <a href="{{ route('posts.show', $post) }}">
     <article class="mb-6 bg-white shadow-lg rounded-lg overflow-hidden">
         <img class="w-full h-80 bg-cover bg-center object-cover object-center"
-            src="{{ Storage::url($post->image->url) }}" alt="">
+            src="@if($post->image) {{ Storage::url($post->image->url) }} @else https://cdn.pixabay.com/photo/2017/10/10/07/48/hills-2836301_960_720.jpg @endif" alt="">
         <div class="px-6 py-4">
             <h1 class="font-bold text-xl mb-2">
                 {{ $post->name }}
             </h1>
             <div class="text-gray-700 text-base">
-                {{ $post->extract }}
+                {!! $post->extract !!}
             </div>
         </div>
         <div class="px-6 pt-4 pb-2">
