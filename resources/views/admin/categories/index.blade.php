@@ -14,9 +14,11 @@
     @endif
 
     <div class="card">
-        <div class="card-header">
-            <a href="{{ route('admin.categories.create') }}" class="btn btn-secondary">Create new Category</a>
-        </div>
+        @can('admin.categories.create')
+            <div class="card-header">
+                <a href="{{ route('admin.categories.create') }}" class="btn btn-secondary">Create new Category</a>
+            </div>
+        @endcan
         <div class="card-body">
             <table class="table table-striped">
                 <thead class="thead-inverse">
@@ -32,18 +34,22 @@
                             <td scope="row">{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm"
-                                    href="{{ route('admin.categories.edit', $category) }}">Edit</a>
+                                @can('admin.categories.edit')
+                                    <a class="btn btn-primary btn-sm"
+                                        href="{{ route('admin.categories.edit', $category) }}">Edit</a>
+                                @endcan
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
+                                @can('admin.categories.destroy')
+                                    <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                @endcan
                             </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>

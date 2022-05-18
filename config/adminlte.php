@@ -250,6 +250,7 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can' => 'admin.home',
             // 'label'       => 4,
             // 'label_color' => 'success',
         ],
@@ -258,19 +259,21 @@ return [
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-users fa-fw',
             'active' => ['admin/users*'],
+            'can' => 'admin.users.index',
         ],
-        ['header' => 'Admin options'],
         [
             'text' => 'Categories',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-buffer fa-fw',
             'active' => ['admin/categories*'],
+            'can' => 'admin.categories.index',
         ],
         [
             'text' => 'Tags',
             'route'  => 'admin.tags.index',
             'icon' => 'fas fa-tags fa-fw',
             'active' => ['admin/tags*'],
+            'can' => 'admin.tags.index',
         ],
         ['header' => 'Blog options'],
         [
@@ -278,13 +281,14 @@ return [
             'route'      => 'admin.posts.index',
             'icon' => 'fas fa-fw fa-clipboard',
             'active' => ['admin/posts'],
+            'can' => 'admin.posts.index',
         ],
         [
             'text'       => 'Create new post',
             'route'      => 'admin.posts.create',
             'icon' => 'fas fa-fw fa-file',
             'active' => ['admin/posts/create'],
-
+            'can' => 'admin.posts.create',
         ],
     ],
 
